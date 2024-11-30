@@ -27,3 +27,10 @@ class ChessBoard:
 
     def is_valid_position(self, x: int, y: int) -> bool:
         return 0 <= x < self.get_height() and 0 <= y < self.get_width()
+
+    def get_position_coordinates(self, position: str) -> (int, int):
+        for row_index in range(self.get_height()):
+            for column_index in range(self.get_width()):
+                if self.positions[row_index][column_index] == position:
+                    return row_index, column_index
+        return -1, -1

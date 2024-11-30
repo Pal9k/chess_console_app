@@ -73,3 +73,16 @@ class TestChessBoard(unittest.TestCase):
 
         self.assertEqual(expected_row, actual_row)
 
+    def test_get_position_coordinates_should_return_correct_x_position(self):
+        chess_board = ChessBoard(8, 8)
+
+        x, y = chess_board.get_position_coordinates('D5')
+
+        self.assertEqual(3, x)
+
+    def test_get_position_coordinates_should_return_correct_y_position(self):
+        chess_board = ChessBoard(8, 8)
+
+        x, y = chess_board.get_position_coordinates('D5')
+
+        self.assertEqual(3, y)
