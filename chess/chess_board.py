@@ -13,6 +13,9 @@ class ChessBoard:
             positions.append(row)
         return positions
 
+    def __getitem__(self, x: int):
+        return self.positions[x]
+
     def get_height(self) -> int:
         return len(self.positions)
 
@@ -21,3 +24,6 @@ class ChessBoard:
 
     def get_chess_board(self) -> list[list[str]]:
         return self.positions
+
+    def is_valid_position(self, x: int, y: int) -> bool:
+        return 0 <= x < self.get_height() and 0 <= y < self.get_width()

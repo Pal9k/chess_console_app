@@ -4,7 +4,7 @@ from chess.chess_board import ChessBoard
 
 
 class TestChessBoard(unittest.TestCase):
-    def test_chess_board_should_have_correct_height(self):
+    def test_chess_board_should_return_correct_height(self):
         expected_height = 8
         chess_board8x8 = ChessBoard(expected_height, 8)
 
@@ -12,7 +12,7 @@ class TestChessBoard(unittest.TestCase):
 
         self.assertEqual(expected_height, actual_height)
 
-    def test_chess_board_should_have_correct_width(self):
+    def test_chess_board_should_return_correct_width(self):
         expected_width = 8
         chess_board8x8 = ChessBoard(8, expected_width)
 
@@ -20,7 +20,7 @@ class TestChessBoard(unittest.TestCase):
 
         self.assertEqual(expected_width, actual_width)
 
-    def test_chess_board_should_have_correct_position(self):
+    def test_chess_board_should_return_correct_positions(self):
         expected_positions = [['A8', 'B8', 'C8', 'D8', 'E8', 'F8', 'G8', 'H8'],
                               ['A7', 'B7', 'C7', 'D7', 'E7', 'F7', 'G7', 'H7'],
                               ['A6', 'B6', 'C6', 'D6', 'E6', 'F6', 'G6', 'H6'],
@@ -34,3 +34,42 @@ class TestChessBoard(unittest.TestCase):
         actual_positions = chess_board8x8.get_chess_board()
 
         self.assertEqual(expected_positions, actual_positions)
+
+    def test_chess_board_should_return_false_when_given_negative_values(self):
+        chess_board8x8 = ChessBoard(8, 8)
+
+        actual = chess_board8x8.is_valid_position(-1, -1)
+
+        self.assertFalse(actual)
+
+
+    def test_chess_board_should_return_true_when_given_valid_values(self):
+        chess_board8x8 = ChessBoard(8, 8)
+
+        actual = chess_board8x8.is_valid_position(7, 3)
+
+        self.assertTrue(actual)
+
+    def test_chess_board_should_return_false_when_given_invalid_values(self):
+        chess_board8x8 = ChessBoard(8, 8)
+
+        actual = chess_board8x8.is_valid_position(17, 3)
+
+        self.assertFalse(actual)
+
+    def test_get_item_should_return_row_when_given_row_index(self):
+        expected_row = ['A8', 'B8', 'C8', 'D8', 'E8', 'F8', 'G8', 'H8']
+        chess_board8x8 = ChessBoard(8, 8)
+
+        actual_row = chess_board8x8[0]
+
+        self.assertEqual(expected_row, actual_row)
+
+    def test_get_item_should_return_cell_value_when_given_cell_indexes(self):
+        expected_row = 'A8'
+        chess_board8x8 = ChessBoard(8, 8)
+
+        actual_row = chess_board8x8[0][0]
+
+        self.assertEqual(expected_row, actual_row)
+
