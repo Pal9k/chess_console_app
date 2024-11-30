@@ -1,6 +1,6 @@
 import unittest
 
-from chess.chess_board import ChessBoard
+from chess.board.chess_board import ChessBoard
 
 
 class TestChessBoard(unittest.TestCase):

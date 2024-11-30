@@ -1,7 +1,7 @@
 import unittest
 
-from chess.chess_board import ChessBoard
-from chess.king_move_strategy import KingMoveStrategy
+from chess.board.chess_board import ChessBoard
+from chess.pieces.strategies.king_move_strategy import KingMoveStrategy
 
 
 class TestKingMoveStrategy(unittest.TestCase):

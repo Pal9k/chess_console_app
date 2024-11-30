@@ -1,7 +1,7 @@
 import unittest
 
-from chess.chess_board import ChessBoard
-from chess.pawn_move_strategy import PawnMoveStrategy
+from chess.board.chess_board import ChessBoard
+from chess.pieces.strategies.pawn_move_strategy import PawnMoveStrategy
 
 
 class TestPawnMoveStrategy(unittest.TestCase):

@@ -1,8 +1,8 @@
-from chess.chess_board import ChessBoard
-from chess.move_strategy import MoveStrategy
+from chess.board.chess_board import ChessBoard
+from chess.pieces.strategies.base_move_strategy import MoveStrategy
 
 
-class ChessPiece:
+class Pieces:
     def __init__(self, x: int, y: int, move_strategy: MoveStrategy):
         self.x = x
         self.y = y

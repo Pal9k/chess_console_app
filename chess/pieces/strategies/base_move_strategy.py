@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 
-from chess.chess_board import ChessBoard
+from chess.board.chess_board import ChessBoard
 
 
 class MoveStrategy(ABC):

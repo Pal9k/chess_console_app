@@ -1,7 +1,7 @@
 import unittest
 from unittest.mock import patch
 
-from chess.chess_game import ChessGame
+from chess.game.chess_game import ChessGame
 from chess.utils.piece_type import PieceType
 
 

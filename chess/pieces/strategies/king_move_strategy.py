@@ -1,5 +1,5 @@
-from chess.chess_board import ChessBoard
-from chess.move_strategy import MoveStrategy
+from chess.board.chess_board import ChessBoard
+from chess.pieces.strategies.base_move_strategy import MoveStrategy
 
 
 class KingMoveStrategy(MoveStrategy):

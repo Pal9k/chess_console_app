@@ -1,5 +1,5 @@
-from chess.chess_board import ChessBoard
-from chess.chess_piece_factory import ChessPieceFactory
+from chess.board.chess_board import ChessBoard
+from chess.pieces.piece_factory import PieceFactory
 
 
 class ChessGame:
@@ -12,7 +12,7 @@ class ChessGame:
         return piece_type, x, y
 
     def get_possible_moves(self, piece_type, x, y):
-        chess_piece = ChessPieceFactory.create_piece(piece_type, x, y)
+        chess_piece = PieceFactory.create_piece(piece_type, x, y)
         return chess_piece.get_possible_moves(self.board)
 
     def play(self):

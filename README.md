@@ -46,16 +46,3 @@ move from its current position .
 
 Example: ```C4, C5, C6, D4, D6, E4, E5, E6```
 
-
-## Project Structure
-
-```
-chess_console_app/
-|-- main.py
-|-- chess/
-    |-- __init__.py
-|-- tests/
-    |-- __init__.py
-|-- requirements.txt
-|-- README.md
-```
