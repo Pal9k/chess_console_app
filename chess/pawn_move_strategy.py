@@ -2,7 +2,7 @@ from chess.chess_board import ChessBoard
 from chess.move_strategy import MoveStrategy
 
 
-class Pawn(MoveStrategy):
+class PawnMoveStrategy(MoveStrategy):
 
     def get_possible_moves(self, x: int, y: int, board: ChessBoard) -> list[str]:
         directions = [(-1, 0)]
