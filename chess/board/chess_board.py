@@ -33,4 +33,4 @@ class ChessBoard:
             for column_index in range(self.get_width()):
                 if self.positions[row_index][column_index] == position:
                     return row_index, column_index
-        return -1, -1
+        raise ValueError("Unknown position: " + position)

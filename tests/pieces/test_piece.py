@@ -1,15 +1,26 @@
 import unittest
-
+from unittest.mock import MagicMock
 from chess.board.chess_board import ChessBoard
-from chess.pieces.piece import Pieces
-from chess.pieces.strategies.king_move_strategy import KingMoveStrategy
+
+from chess.pieces.piece import Piece
+
+
+class MockPiece(Piece):
+    def get_possible_moves(self, board: ChessBoard) -> list[str]:
+        return ["A2", "A3", "A4"]
 
 
 class TestPiece(unittest.TestCase):
-    def test_get_possible_moves_should_return_moves_when_given_king_move_strategy(self):
-        expected_moves = ['C6', 'D6', 'E6', 'C5', 'E5', 'C4', 'D4', 'E4']
-        king = Pieces(3, 3, KingMoveStrategy())
+    def setUp(self):
+        self.mock_board = MagicMock(ChessBoard)
+        self.piece = MockPiece(1, 1)  # Create an instance of MockPiece
 
-        actual_moves = king.get_possible_moves(ChessBoard(8, 8))
+    def test_initialization_coordinate_x(self):
+        self.assertEqual(self.piece.x, 1)
 
-        self.assertEqual(expected_moves, actual_moves)
+    def test_initialization_coordinate_y(self):
+        self.assertEqual(self.piece.y, 1)
+
+    def test_get_possible_moves(self):
+        possible_moves = self.piece.get_possible_moves(self.mock_board)
+        self.assertEqual(possible_moves, ["A2", "A3", "A4"])

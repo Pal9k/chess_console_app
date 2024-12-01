@@ -42,7 +42,6 @@ class TestChessBoard(unittest.TestCase):
 
         self.assertFalse(actual)
 
-
     def test_chess_board_should_return_true_when_given_valid_values(self):
         chess_board8x8 = ChessBoard(8, 8)
 
@@ -74,15 +73,26 @@ class TestChessBoard(unittest.TestCase):
         self.assertEqual(expected_row, actual_row)
 
     def test_get_position_coordinates_should_return_correct_x_position(self):
+        expected = 3
         chess_board = ChessBoard(8, 8)
 
         x, y = chess_board.get_position_coordinates('D5')
 
-        self.assertEqual(3, x)
+        self.assertEqual(expected, x)
 
     def test_get_position_coordinates_should_return_correct_y_position(self):
+        expected = 3
         chess_board = ChessBoard(8, 8)
 
         x, y = chess_board.get_position_coordinates('D5')
 
-        self.assertEqual(3, y)
+        self.assertEqual(expected, y)
+
+    def test_get_position_coordinates_should_raise_exception_when_given_invalid_position(self):
+        expected_error_message = "Unknown position: Z9"
+        chess_board = ChessBoard(8, 8)
+
+        with self.assertRaises(ValueError) as context:
+            chess_board.get_position_coordinates("Z9")
+
+        self.assertEqual(expected_error_message, str(context.exception))

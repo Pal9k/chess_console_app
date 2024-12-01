@@ -1,15 +1,15 @@
 from chess.board.chess_board import ChessBoard
-from chess.pieces.strategies.base_move_strategy import MoveStrategy
+from chess.pieces.piece import Piece
 
 
-class QueenMoveStrategy(MoveStrategy):
+class Queen(Piece):
 
-    def get_possible_moves(self, x: int, y: int, board: ChessBoard) -> list[str]:
+    def get_possible_moves(self, board: ChessBoard) -> list[str]:
         directions = [(-1, -1), (-1, 0), (-1, 1), (0, -1), (0, 1), (1, -1), (1, 0), (1, 1)]
         possible_moves = []
 
         for dx, dy in directions:
-            nx, ny = x + dx, y + dy
+            nx, ny = self.x + dx, self.y + dy
             while board.is_valid_position(nx, ny):
                 possible_moves.append(board[nx][ny])
                 nx += dx
