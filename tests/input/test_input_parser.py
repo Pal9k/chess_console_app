@@ -8,7 +8,7 @@ class TestInputParser(unittest.TestCase):
     def test_parse_should_return_piece_type(self):
         expected_piece_type = "King"
 
-        actual_piece_type, actual_position = InputParser.parse("King, D5")
+        actual_piece_type, actual_position = InputParser.parse("   King,   D5")
 
         self.assertEqual(expected_piece_type, actual_piece_type)
 
