@@ -1,4 +1,4 @@
-from chess.board.chess_board import ChessBoard
+from chess.models.board.chess_board import ChessBoard
 from chess.validators.piece_type_validator import PieceTypeValidator
 from chess.validators.position_validator import PositionValidator
 

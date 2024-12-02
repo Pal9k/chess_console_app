@@ -1,7 +1,7 @@
 import unittest
 
-from chess.board.chess_board import ChessBoard
-from chess.pieces.queen import Queen
+from chess.models.board.chess_board import ChessBoard
+from chess.models.pieces.queen import Queen
 
 
 class TestQueen(unittest.TestCase):

@@ -1,4 +1,4 @@
-from chess.board.chess_board import ChessBoard
+from chess.models.board.chess_board import ChessBoard
 
 
 class PositionValidator:

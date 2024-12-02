@@ -1,6 +1,6 @@
 import unittest
 
-from chess.board.chess_board import ChessBoard
+from chess.models.board.chess_board import ChessBoard
 from chess.utils.piece_type import PieceType
 from chess.validators.validator import Validator
 

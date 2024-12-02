@@ -1,8 +1,8 @@
 import unittest
 from unittest.mock import MagicMock
-from chess.board.chess_board import ChessBoard
 
-from chess.pieces.piece import Piece
+from chess.models.board.chess_board import ChessBoard
+from chess.models.pieces.piece import Piece
 
 
 class MockPiece(Piece):

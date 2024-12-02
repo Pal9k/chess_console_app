@@ -1,5 +1,5 @@
-from chess.board.chess_board import ChessBoard
-from chess.pieces.factory.piece_factory import PieceFactory
+from chess.models.board.chess_board import ChessBoard
+from chess.models.pieces.factory.piece_factory import PieceFactory
 
 
 class MoveCalculator:

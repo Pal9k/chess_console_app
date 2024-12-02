@@ -1,5 +1,5 @@
-from chess.board.chess_board import ChessBoard
 from chess.input.input_parser import InputParser
+from chess.models.board.chess_board import ChessBoard
 from chess.moves.moves_calculator import MoveCalculator
 from chess.utils.dimentions import Dimensions
 from chess.validators.validator import Validator

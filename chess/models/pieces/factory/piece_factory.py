@@ -1,7 +1,7 @@
-from chess.pieces.piece import Piece
-from chess.pieces.king import King
-from chess.pieces.pawn import Pawn
-from chess.pieces.queen import Queen
+from chess.models.pieces.piece import Piece
+from chess.models.pieces.king import King
+from chess.models.pieces.pawn import Pawn
+from chess.models.pieces.queen import Queen
 from chess.utils.piece_type import PieceType
 
 
